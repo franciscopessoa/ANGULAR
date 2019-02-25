@@ -1,0 +1,112 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <div id="divx">
+
+    </div>
+    <button id="buta1">Adicione uma bagaça</button>
+
+    <ul>
+
+    </ul>
+
+    <input type="text" name="nome" id="qlqcoisa"> 
+    <button onClick="adicionar()">Adicionar</button>
+
+    <script>
+        var nomes = ['cu','cu1','cu2'];
+        var listaelementos = document.querySelector('ul');
+
+        for (nome of nomes) {
+            var li = document.createElement('li');
+            var litext = document.createTextNode(nome);
+
+            li.appendChild(litext);
+            listaelementos.appendChild(li);
+        }
+
+        function adicionar() {
+            var texto = document.getElementById('qlqcoisa');
+            var textox = texto.value;
+            
+            var li = document.createElement('li');
+            var litext = document.createTextNode(textox);
+
+            li.appendChild(litext);
+            listaelementos.appendChild(li);
+        }
+
+        var div = document.getElementById('divx');
+        var botao = document.getElementById('buta1');
+
+        botao.onclick = function () {
+            var novadiv = document.createElement('div');
+
+            novadiv.style.width = '100px';
+            novadiv.style.height = '100px';
+            novadiv.style.backgroundColor = '#F00';
+            novadiv.onmouseover = function () {
+            novadiv.style.backgroundColor = getRandomColor();
+        }
+            div.appendChild(novadiv);
+        }
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        var newColor = getRandomColor(); 
+
+        //PRIMEIRO MODULO
+
+    /*var endereco = {
+        rua: "Rua dos pinheiros",
+        numero: 1293,
+        bairro: "Centro",
+        cidade: "São Paulo",
+        uf: "SP"
+    };
+    console.log('O usuario mora em '+endereco.cidade+'/'+endereco.uf+' no bairro '+endereco.bairro+', na rua "'+endereco.rua+'" com nº '+endereco.numero);
+
+    function pares(x, y) {
+        while (x <= y) {
+            (x % 2) === 1 ? console.log(x+' impar') : console.log(x+' par');
+            x++;
+        }
+    }
+    pares(32, 321);
+
+    function temHabilidade(skills) {
+        var verifica = skills.indexOf("Javascript");
+        if (verifica != -1){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    var skills = ["Javascript", "ReactJS", "React Native"];
+    temHabilidade(skills); // true ou false
+
+    var usuarios = [
+        {
+        nome: "Diego",
+        habilidades: ["Javascript", "ReactJS", "Redux"]
+        },
+        {
+        nome: "Gabriel",
+        habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+        }
+    ];
+    for (let usuario of usuarios) {
+        console.log(usuario.nome+' Possui habilidades em: '+usuario.habilidades.join(', '));
+    }*/
+    </script>
+</body>
+</html>
